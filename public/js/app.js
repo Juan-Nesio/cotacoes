@@ -16,7 +16,7 @@ cotacoesForm.addEventListener('submit', (event) => {
     MsgTitulo.innerText = 'Buscando....'
     event.preventDefault()
     const ativo = document.querySelector('input').value
-    fetch(`http://localhost:3000/cotacoes?ativo=${ativo}`).then((response => {
+    fetch(`/cotacoes?ativo=${ativo}`).then((response => {
         response.json().then((data) => {
             if (data.error) {
                 MsgTitulo.innerText = `Algo deu errado: ${data.error.mensage} código ${data.error.code}`
